@@ -1,14 +1,17 @@
+const express = require('express');
+const routes = require('./routes');
+const sequelize = require('./config/connection');
 
-const mysql = require('mysql');
-const inquirer = require('inquirer');
-// const connection = require("./config/connection");
-const cTable = require("console.table");
-require("dotenv").config()
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-// create the connection information for the sql database
-const connection = mysql.createConnection({
-  host: 'localhost',
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-  password: process.env.DB_PASSWORD,
-  database: 'employee_DB',
+// turn on routes
+app.use(routes);
+
+// turn on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });
