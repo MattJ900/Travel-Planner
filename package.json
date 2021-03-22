@@ -1,0 +1,28 @@
+{
+  "name": "Travel-Planner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattJ900/Travel-Planner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattJ900/Travel-Planner/issues"
+  },
+  "homepage": "https://github.com/MattJ900/Travel-Planner#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^8.2.0",
+    "init": "^0.1.2",
+    "inquirer": "^8.0.0",
+    "mysql2": "^2.2.5"
+  }
+}
